@@ -12,6 +12,7 @@ import { TasksService } from './tasks.service';
 import { Task, TaskStatus } from './task.model';
 import { createTaskDto } from './dto/create-task.dto';
 import { getTasksFilterDto } from './dto/get-tasks-filter.dto';
+import { updateTaskDto } from './dto/update-task-dto';
 
 @Controller('tasks')
 export class TasksController {
@@ -36,8 +37,8 @@ export class TasksController {
   }
 
   @Patch('/:id')
-  updateTaskById(@Param('id') id: string, @Body() body:Task) {
-    return this.taskService.updateTaskById(id,body);
+  updateTaskById(@Param('id') id: string, @Body() updateTaskDto:updateTaskDto) {
+    return this.taskService.updateTaskById(id,updateTaskDto);
   }
 
   @Delete('/:id')
