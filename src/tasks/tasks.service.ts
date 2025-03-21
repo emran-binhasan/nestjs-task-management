@@ -10,7 +10,7 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class TasksService {
   constructor(
-    @InjectRepository(Task) private tasksRepository: Repository<Task>,
+    @InjectRepository(Task) private readonly tasksRepository: Repository<Task>,
   ) {}
 
   async getTaskById(id: string): Promise<Task> {
