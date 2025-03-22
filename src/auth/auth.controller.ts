@@ -9,4 +9,9 @@ export class AuthController {
     signUp(@Body() authCredentialsDto:authCredentialsDto){
         return this.authService.signUp(authCredentialsDto)
     }
+
+    @Post('/signIn')
+    signIn(@Body() authCredentialsDto:authCredentialsDto){
+        return this.authService.signIn(authCredentialsDto)
+    }
 }
